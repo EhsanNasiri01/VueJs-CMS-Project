@@ -1,7 +1,8 @@
 <script setup>
-import {onMounted} from "vue";
+import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
 const store = useStore();
+const userFilter = computed(() => store.state.userModule.usersFilter)
 onMounted(()=>{
 store.dispatch("getUsers",{pageId:1,take:1})
 })
@@ -24,11 +25,17 @@ store.dispatch("getUsers",{pageId:1,take:1})
       </thead>
 
       <tbody>
+      <tr v-for="(item,index) in userFilter.users" :key="index">
+        <td>{{item.userName}}</td>
+        <td>{{item.fullName}}</td>
+        <td>
+          <span v-if="item.role===1">ادمین</span>
+          <span v-if="item.role===0">کاربر</span>
+        </td>
+        <td><v-btn color="info" @click="router.push(`/admin/users/edit/${item.id}`)">ویرایش</v-btn></td>
+      </tr>
       <tr>
-        <td>احسان جان</td>
-        <td>احسان 2</td>
-        <td>ادمین</td>
-        <td><v-btn color="info">ویرایش</v-btn></td>
+        <td colspan="4" v-if="userFilter.entityCount === 0">کاربری برای نمایش وجود ندارد</td>
       </tr>
       </tbody>
     </v-table>
