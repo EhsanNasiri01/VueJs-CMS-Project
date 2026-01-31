@@ -1,5 +1,10 @@
 <script setup>
-
+import {onMounted} from "vue";
+import {useStore} from "vuex";
+const store = useStore();
+onMounted(()=>{
+store.dispatch("getUsers",{pageId:1,take:1})
+})
 </script>
 
 <template>
