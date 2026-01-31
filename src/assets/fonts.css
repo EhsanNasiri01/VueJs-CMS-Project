@@ -1,0 +1,19 @@
+/* src/styles/fonts.css */
+@font-face {
+    font-family: 'Dana';
+    src:
+            url('@/assets/fonts/Dana/woff2/DanaFaNum-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* src/styles/fonts.css */
+@font-face {
+    font-family: 'Morabba';
+    src:
+            url('@/assets/fonts/Morabba/woff2/Morabba-Medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

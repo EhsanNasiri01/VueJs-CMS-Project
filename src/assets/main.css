@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer components {
+    .button-primary{
+        @apply p-4 bg-red-300 text-white  cursor-pointer;
+    }
+}
+@layer base {
+    h1{
+        font-weight: bold;
+    }
+    body {
+        font-family: 'Dana', sans-serif;
+    }
+    hr{
+        margin:10px 0;
+        border-color:#3c404024;
+    }
+    table {
+        text-align: center !important;
+    }
+    table th {
+        text-align: center !important;
+    }
+}
