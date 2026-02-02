@@ -3,6 +3,7 @@ import HomeView from '@/pages/HomeView.vue'
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import IndexAdmin from '@/pages/admin/IndexAdmin.vue'
 import IndexUser from '@/pages/admin/users/IndexUser.vue'
+import AddUser from '@/pages/admin/users/AddUser.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -23,6 +24,11 @@ const router = createRouter({
         {
           path:"users",
           component:IndexUser
+        },
+        {
+          path:"users/add",
+          name:"addUser",
+          component:AddUser
         }
       ]
 

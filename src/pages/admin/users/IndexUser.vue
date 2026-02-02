@@ -1,6 +1,8 @@
 <script setup>
 import {computed, onMounted} from "vue";
 import {useStore} from "vuex";
+import {useRouter} from "vue-router";
+const router = useRouter();
 const store = useStore();
 const userFilter = computed(() => store.state.userModule.usersFilter)
 onMounted(()=>{
@@ -12,7 +14,7 @@ store.dispatch("getUsers",{pageId:1,take:1})
   <div>
     <h1 class="text-3xl">مدیریت کاربران</h1>
     <hr class="mt-4 mb-4" />
-    <v-btn color="success">افزودن کاربر</v-btn>
+    <v-btn color="success" @click="router.push({name:'addUser'})">افزودن کاربر</v-btn>
 
     <v-table class="elevation-2 mt-5">
       <thead class="">
