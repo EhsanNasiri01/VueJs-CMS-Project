@@ -6,7 +6,7 @@ const router = useRouter();
 const store = useStore();
 const userFilter = computed(() => store.state.userModule.usersFilter)
 onMounted(()=>{
-store.dispatch("getUsers",{pageId:1,take:1})
+store.dispatch("getUsers",{pageId:1,take:10})
 })
 </script>
 

@@ -20,6 +20,9 @@ export default {
             }).catch((response) => {
 
             })
+        },
+        addUser(context,user) {
+            return axios.post("/api/user", user);
         }
     },
     mutations: {
